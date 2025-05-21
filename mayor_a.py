@@ -1,3 +1,5 @@
+import sys
+
 ventas = {
 "Enero": 15000,
 "Febrero": 22000,
@@ -12,3 +14,15 @@ ventas = {
 "Noviembre": 91000,
 "Diciembre": 21000,
 }
+
+if len(sys.argv) > 1:
+    num1 = int(sys.argv[1])
+    print(f"El número de prueba es: {num1}")
+    print("Los meses con ventas mayores al umbral ingresado son:")
+
+    for mes, monto in ventas.items ():
+        if monto > num1:
+            print(f"{mes} : {monto}")
+
+else:
+    print("Error! Ingrese un número de prueba.")            
